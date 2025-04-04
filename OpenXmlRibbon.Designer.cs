@@ -36,17 +36,17 @@
         {
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
+            this.btnInsertContent = this.Factory.CreateRibbonButton();
             this.menu1 = this.Factory.CreateRibbonMenu();
             this.btnInsertTableSelect = this.Factory.CreateRibbonButton();
-            this.btnTestPreviousXml = this.Factory.CreateRibbonButton();
-            this.separator1 = this.Factory.CreateRibbonSeparator();
-            this.btnInsertRepeat = this.Factory.CreateRibbonButton();
             this.btnInsertTableCell = this.Factory.CreateRibbonButton();
+            this.btnInsertRepeat = this.Factory.CreateRibbonButton();
             this.btnInsertEndRepeat = this.Factory.CreateRibbonButton();
             this.btnInsertConditional = this.Factory.CreateRibbonButton();
             this.btnInsertEndConditional = this.Factory.CreateRibbonButton();
-            this.btnInsertContent = this.Factory.CreateRibbonButton();
+            this.separator1 = this.Factory.CreateRibbonSeparator();
             this.btnTestXML = this.Factory.CreateRibbonButton();
+            this.btnTestPreviousXml = this.Factory.CreateRibbonButton();
             this.btnShowTokensPane = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
@@ -70,6 +70,14 @@
             this.group1.Label = "Eric White";
             this.group1.Name = "group1";
             // 
+            // btnInsertContent
+            // 
+            this.btnInsertContent.Image = global::OpenXmlPowerToolsWordAddin.Properties.Resources.variable;
+            this.btnInsertContent.Label = "Insert Content";
+            this.btnInsertContent.Name = "btnInsertContent";
+            this.btnInsertContent.ShowImage = true;
+            this.btnInsertContent.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInsertTag_Click);
+            // 
             // menu1
             // 
             this.menu1.Items.Add(this.btnInsertTableSelect);
@@ -88,16 +96,12 @@
             this.btnInsertTableSelect.ShowImage = true;
             this.btnInsertTableSelect.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInsertTableSelect_Click);
             // 
-            // btnTestPreviousXml
+            // btnInsertTableCell
             // 
-            this.btnTestPreviousXml.Label = "Retest last file";
-            this.btnTestPreviousXml.Name = "btnTestPreviousXml";
-            this.btnTestPreviousXml.Visible = false;
-            this.btnTestPreviousXml.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnTestPreviousXml_Click);
-            // 
-            // separator1
-            // 
-            this.separator1.Name = "separator1";
+            this.btnInsertTableCell.Label = "Table Cell";
+            this.btnInsertTableCell.Name = "btnInsertTableCell";
+            this.btnInsertTableCell.ShowImage = true;
+            this.btnInsertTableCell.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInsertTableCell_Click);
             // 
             // btnInsertRepeat
             // 
@@ -105,13 +109,6 @@
             this.btnInsertRepeat.Name = "btnInsertRepeat";
             this.btnInsertRepeat.ShowImage = true;
             this.btnInsertRepeat.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInsertRepeat_Click);
-            // 
-            // btnInsertTableCell
-            // 
-            this.btnInsertTableCell.Label = "Table Cell";
-            this.btnInsertTableCell.Name = "btnInsertTableCell";
-            this.btnInsertTableCell.ShowImage = true;
-            this.btnInsertTableCell.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInsertTableCell_Click);
             // 
             // btnInsertEndRepeat
             // 
@@ -134,13 +131,9 @@
             this.btnInsertEndConditional.ShowImage = true;
             this.btnInsertEndConditional.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInsertEndConditional_Click);
             // 
-            // btnInsertContent
+            // separator1
             // 
-            this.btnInsertContent.Image = global::OpenXmlPowerToolsWordAddin.Properties.Resources.variable;
-            this.btnInsertContent.Label = "Insert Content";
-            this.btnInsertContent.Name = "btnInsertContent";
-            this.btnInsertContent.ShowImage = true;
-            this.btnInsertContent.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInsertTag_Click);
+            this.separator1.Name = "separator1";
             // 
             // btnTestXML
             // 
@@ -149,6 +142,13 @@
             this.btnTestXML.Name = "btnTestXML";
             this.btnTestXML.ShowImage = true;
             this.btnTestXML.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnTestXML_Click);
+            // 
+            // btnTestPreviousXml
+            // 
+            this.btnTestPreviousXml.Label = "Retest last file";
+            this.btnTestPreviousXml.Name = "btnTestPreviousXml";
+            this.btnTestPreviousXml.Visible = false;
+            this.btnTestPreviousXml.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnTestPreviousXml_Click);
             // 
             // btnShowTokensPane
             // 

@@ -83,6 +83,40 @@ namespace OpenXmlPowerToolsWordAddin
             var cc = doc.ContentControls.Add(WdContentControlType.wdContentControlText);
             cc.Range.Text = $"<Content Select=\"{xpath}\" />";
         }
+
+        private void treeTokens_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var node = e.Node;
+                var xpath = node.Tag.ToString();
+                // .NET xpath begins with /Root, Eric White Expects ./
+                xpath = "./" + xpath.Substring(6);
+                contextMenu.Tag = xpath;
+                contextMenu.Show(treeTokens, e.Location);
+            }
+        }
+
+        private void insertContentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var doc = Globals.ThisAddIn.Application.ActiveDocument;
+            var cc = doc.ContentControls.Add(WdContentControlType.wdContentControlText);
+            cc.Range.Text = $"<Content Select=\"{contextMenu.Tag}\" />";
+        }
+
+        private void insertRepeatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var doc = Globals.ThisAddIn.Application.ActiveDocument;
+            var cc = doc.ContentControls.Add(WdContentControlType.wdContentControlText);
+            cc.Range.Text = $"<Repeat Select=\"{contextMenu.Tag}\" />";
+        }
+
+        private void insertTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var doc = Globals.ThisAddIn.Application.ActiveDocument;
+            var cc = doc.ContentControls.Add(WdContentControlType.wdContentControlText);
+            cc.Range.Text = $"<Table Select=\"{contextMenu.Tag}\" />";
+        }
     }
 
     public static class StringExtensions
